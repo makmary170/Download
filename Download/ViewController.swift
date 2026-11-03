@@ -17,9 +17,33 @@ class ViewController: UIViewController {
         downloader.delegate = self
     }
 
-
-    @IBAction func didUpdateProgress(_ sender: UIButton) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         downloader.downloadLargeFile()
+    }
 
+    func updateProgressBar() {
+        let progressSteps: [Float] = [0.25, 0.50, 0.75, 1]
+        for step in progressSteps {
+            DispatchQueue.main.async { [self] in
+                progressBar.setProgress(step, animated: true)
+            }
+            sleep(3)
+        }
+    }
+
+    func showAlert() {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Загрузка файла",message: "Загрузка завершена!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func cleanProgressBar() {
+        DispatchQueue.main.async {
+            self.progressBar.setProgress(0, animated: true)
+        }
     }
 }
