@@ -9,11 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var progressBar: UIProgressView!
+    lazy private var downloader = Downloader()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        downloader.delegate = self
     }
 
 
-}
+    @IBAction func didUpdateProgress(_ sender: UIButton) {
+        downloader.downloadLargeFile()
 
+    }
+}
