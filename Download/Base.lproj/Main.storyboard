@@ -60,8 +60,8 @@
                     <connections>
                         <outlet property="cancelButton" destination="o9g-XK-Aca" id="S9c-yW-vnj"/>
                         <outlet property="progressBar" destination="Ih1-sN-FYr" id="weq-Cw-gDb"/>
-                        <outlet property="remainingTime" destination="tbZ-4w-tKk" id="oep-io-oCz"/>
-                        <outlet property="speed" destination="TOw-mL-num" id="6NF-hr-14M"/>
+                        <outlet property="remainingTimeLabel" destination="tbZ-4w-tKk" id="oep-io-oCz"/>
+                        <outlet property="speedLabel" destination="TOw-mL-num" id="6NF-hr-14M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
