@@ -10,8 +10,13 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak private var progressBar: UIProgressView!
+    @IBOutlet weak var speed: UILabel!
+    @IBOutlet weak private var remainingTime: UILabel!
     @IBOutlet weak private var cancelButton: UIButton!
 
+    private var startTime: TimeInterval = 12
+    private var nowTime: TimeInterval = 0
+    private var downloadTime: TimeInterval = 3
     lazy private var downloader = Downloader()
     private var isCancel: Bool = false
 
@@ -38,7 +43,13 @@ class ViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.progressBar.setProgress(step, animated: true)
                 }
-                sleep(5)
+                sleep(UInt32(self.downloadTime))
+                DispatchQueue.main.async {
+                    let randomSpeed = Double.random(in: 5...10).rounded()
+                    self.speed.text = String("\(randomSpeed) kb/s")
+                    self.startTime -= self.downloadTime
+                    self.remainingTime.text = String("\(self.startTime) seconds")
+                }
                 guard self.isCancel == false else { return }
             }
         }
@@ -61,4 +72,3 @@ class ViewController: UIViewController {
             }
         }
     }
-

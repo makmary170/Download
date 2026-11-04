@@ -29,13 +29,30 @@
                                     <action selector="didTapCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2gw-Jk-7KF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.0 seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbZ-4w-tKk" userLabel="Remaining Time Label">
+                                <rect key="frame" x="121" y="442" width="100.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Kb/s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOw-mL-num" userLabel="Speed Label">
+                                <rect key="frame" x="242.33333333333337" y="442" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o9g-XK-Aca" secondAttribute="bottom" constant="201" id="2jg-Dc-mgU"/>
+                            <constraint firstItem="tbZ-4w-tKk" firstAttribute="top" secondItem="Ih1-sN-FYr" secondAttribute="bottom" constant="14" id="57U-bh-45j"/>
                             <constraint firstItem="Ih1-sN-FYr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8vy-hd-vkj"/>
+                            <constraint firstItem="TOw-mL-num" firstAttribute="leading" secondItem="tbZ-4w-tKk" secondAttribute="trailing" constant="21" id="Bem-fH-LdC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TOw-mL-num" secondAttribute="trailing" symbolic="YES" id="GOr-K1-Vxk"/>
+                            <constraint firstItem="tbZ-4w-tKk" firstAttribute="baseline" secondItem="TOw-mL-num" secondAttribute="baseline" id="IMG-I4-Dlr"/>
                             <constraint firstItem="Ih1-sN-FYr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="TI1-H7-hbm"/>
+                            <constraint firstItem="tbZ-4w-tKk" firstAttribute="leading" secondItem="Ih1-sN-FYr" secondAttribute="leading" id="WTk-s0-XGm"/>
                             <constraint firstItem="Ih1-sN-FYr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="odX-fI-l88"/>
                             <constraint firstItem="o9g-XK-Aca" firstAttribute="centerX" secondItem="Ih1-sN-FYr" secondAttribute="centerX" id="vfY-Rl-1qr"/>
                         </constraints>
@@ -43,6 +60,8 @@
                     <connections>
                         <outlet property="cancelButton" destination="o9g-XK-Aca" id="S9c-yW-vnj"/>
                         <outlet property="progressBar" destination="Ih1-sN-FYr" id="weq-Cw-gDb"/>
+                        <outlet property="remainingTime" destination="tbZ-4w-tKk" id="oep-io-oCz"/>
+                        <outlet property="speed" destination="TOw-mL-num" id="6NF-hr-14M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
