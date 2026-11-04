@@ -1,24 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="25408" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="25407"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Download" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-sN-FYr">
+                                <rect key="frame" x="121" y="424" width="151" height="4"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9g-XK-Aca">
+                                <rect key="frame" x="158.33333333333334" y="582" width="76.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapCancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2gw-Jk-7KF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.0 seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbZ-4w-tKk" userLabel="Remaining Time Label">
+                                <rect key="frame" x="121" y="442" width="100.33333333333331" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Kb/s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOw-mL-num" userLabel="Speed Label">
+                                <rect key="frame" x="242.33333333333337" y="442" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o9g-XK-Aca" secondAttribute="bottom" constant="201" id="2jg-Dc-mgU"/>
+                            <constraint firstItem="tbZ-4w-tKk" firstAttribute="top" secondItem="Ih1-sN-FYr" secondAttribute="bottom" constant="14" id="57U-bh-45j"/>
+                            <constraint firstItem="Ih1-sN-FYr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8vy-hd-vkj"/>
+                            <constraint firstItem="TOw-mL-num" firstAttribute="leading" secondItem="tbZ-4w-tKk" secondAttribute="trailing" constant="21" id="Bem-fH-LdC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TOw-mL-num" secondAttribute="trailing" symbolic="YES" id="GOr-K1-Vxk"/>
+                            <constraint firstItem="tbZ-4w-tKk" firstAttribute="baseline" secondItem="TOw-mL-num" secondAttribute="baseline" id="IMG-I4-Dlr"/>
+                            <constraint firstItem="Ih1-sN-FYr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="121" id="TI1-H7-hbm"/>
+                            <constraint firstItem="tbZ-4w-tKk" firstAttribute="leading" secondItem="Ih1-sN-FYr" secondAttribute="leading" id="WTk-s0-XGm"/>
+                            <constraint firstItem="Ih1-sN-FYr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="odX-fI-l88"/>
+                            <constraint firstItem="o9g-XK-Aca" firstAttribute="centerX" secondItem="Ih1-sN-FYr" secondAttribute="centerX" id="vfY-Rl-1qr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="o9g-XK-Aca" id="S9c-yW-vnj"/>
+                        <outlet property="progressBar" destination="Ih1-sN-FYr" id="weq-Cw-gDb"/>
+                        <outlet property="remainingTimeLabel" destination="tbZ-4w-tKk" id="oep-io-oCz"/>
+                        <outlet property="speedLabel" destination="TOw-mL-num" id="6NF-hr-14M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="130.98591549295776"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.21960784310000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
